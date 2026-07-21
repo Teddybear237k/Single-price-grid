@@ -53,3 +53,60 @@ body {
   overflow: clip;
   box-shadow: 0 var(--space-2) var(--space-5) rgb(0 0 0 / 12%);
 }
+
+.intro {
+  padding: var(--space-5);
+}
+
+.heading {
+  margin-block: 0;
+  font-size: var(--font-size-6);
+  color: var(--teal);
+}
+
+.badge {
+  margin-block: var(--space-2) 0;
+  font-size: var(--font-size-4);
+  font-weight: bold;
+  color: var(--lime-dark);
+}
+
+.text {
+  margin-block: var(--space-2) 0;
+  font-size: var(--font-size-3);
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--column-min-width), 100%), 1fr));
+}
+
+.panel {
+  padding: var(--space-5);
+  color: var(--white);
+}
+
+.panel-price {
+  background: var(--teal-dark);
+}
+
+.panel-features {
+  background: var(--teal-light);
+}
+
+.heading-small {
+  margin-block: 0 var(--space-2);
+  font-size: var(--font-size-4);
+}
+
+.price {
+  margin-block: 0;
+  font-size: var(--font-size-7);
+  font-weight: bold;
+}
+
+.text-small {
+  font-size: var(--font-size-2);
+  font-weight: normal;
+  opacity: 0.8;
+}
