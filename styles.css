@@ -1,0 +1,55 @@
+:root {
+  --white: #ffffff;
+  --gray-text: #94a0b3;
+  --teal: #1f9c96;
+  --teal-dark: #1a8b86;
+  --teal-light: #2bb0a7;
+  --lime: #b3d92c;
+  --lime-dark: #93b824;
+  --page-bg: #eef1f4;
+  --font-size-1: clamp(0.69rem, 0.69rem + 0.04vw, 0.72rem);
+  --font-size-2: clamp(0.83rem, 0.81rem + 0.12vw, 0.9rem);
+  --font-size-3: clamp(1rem,    0.96rem + 0.22vw, 1.125rem);
+  --font-size-4: clamp(1.2rem,  1.13rem + 0.36vw, 1.4rem);
+  --font-size-5: clamp(1.44rem, 1.33rem + 0.55vw, 1.76rem);
+  --font-size-6: clamp(1.73rem, 1.56rem + 0.82vw, 2.2rem);
+  --font-size-7: clamp(2.07rem, 1.84rem + 1.17vw, 2.75rem);
+
+  --space-1: clamp(0.25rem, 0.24rem + 0.05vw, 0.28rem);
+  --space-2: clamp(0.5rem,  0.48rem + 0.11vw, 0.56rem);
+  --space-3: clamp(0.75rem, 0.72rem + 0.16vw, 0.84rem);
+  --space-4: clamp(1rem,    0.96rem + 0.22vw, 1.13rem);
+  --space-5: clamp(1.5rem,  1.24rem + 1.3vw,  2.25rem);
+  --space-6: clamp(2rem,    1.6rem  + 2vw,    3rem);
+  --card-max-width: 44rem;
+  --column-min-width: 16rem;
+  --card-radius: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
+  --button-radius: clamp(0.5rem, 0.44rem + 0.3vw, 0.875rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin-block: 0;
+  margin-inline: 0;
+  background: var(--page-bg);
+  font-family: system-ui, sans-serif;
+  font-size: var(--font-size-3);
+  line-height: 1.6;
+  color: var(--gray-text);
+  display: grid;
+  place-items: center;
+  min-block-size: 100svh;
+  padding-block: var(--space-6);
+  padding-inline: var(--space-4);
+}
+
+.card {
+  inline-size: min(100%, var(--card-max-width));
+  background: var(--white);
+  border-radius: var(--card-radius);
+  overflow: clip;
+  box-shadow: 0 var(--space-2) var(--space-5) rgb(0 0 0 / 12%);
+}
