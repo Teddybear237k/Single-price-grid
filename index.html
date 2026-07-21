@@ -1,53 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Basic Layout</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>price grid</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
 </head>
 
 <body>
-    <div>
 
-        <main class="card">
-            <header class="card__intro">
-                <h2>Join our community</h2>
-                <p>30-day, hassle-free money back guarantee</p>
-                <p>Gain access to our full library of tutorials along with expert code reviews.
-                    Perfect for any developers who are serious about honing their skills.</p>
-            </header>
+    <main class="card">
 
-            <div>
-                <section>
-                    <h3 id="sub-title">Monthly Subscription</h3>
-                    <p>
-                        <span>$29</span>
-                        <span>per month</span>
-                    </p>
-                    <p>Full access for less than $1 a day</p>
-                    <button type="button" class="btn">Sign Up</button>
-                </section>
+        <header class="intro">
+            <h2 class="heading">Join our community</h2>
+            <p class="badge">30-day, hassle-free money back guarantee</p>
+            <p class="text">Gain access to our full library of tutorials along with expert code reviews. Perfect for any
+                developers who are serious about honing their skills.</p>
+        </header>
 
-                <section>
-                    <h3 id="why-title">Why Us</h3>
-                    <ul>
-                        <li>Tutorials by industry experts</li>
-                        <li>Peer &amp; expert code review</li>
-                        <li>Coding exercises</li>
-                        <li>Access to our GitHub repos</li>
-                        <li>Community forum</li>
-                        <li>Flashcard decks</li>
-                        <li>New videos every week</li>
-                    </ul>
-                </section>
-            </div>
-        </main>
-    </div>
+        <div class="panels">
+
+            <section class="panel panel-price">
+                <h3 class="heading-small">Monthly Subscription</h3>
+                <p class="price">$29 <span class="text-small">per month</span></p>
+                <p class="text-small">Full access for less than $1 a day</p>
+                <button class="button">Sign Up</button>
+            </section>
+
+            <section class="panel panel-features">
+                <h3 class="heading-small">Why Us</h3>
+                <ul class="list">
+                    <li>Tutorials by industry experts</li>
+                    <li>Peer &amp; expert code review</li>
+                    <li>Coding exercises</li>
+                    <li>Access to our GitHub repos</li>
+                    <li>Community forum</li>
+                    <li>Flashcard decks</li>
+                    <li>New videos every week</li>
+                </ul>
+            </section>
+
+        </div>
+
+    </main>
+
 </body>
-
 
 </html>
