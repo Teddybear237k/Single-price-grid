@@ -21,7 +21,7 @@
   --space-4: clamp(1rem,    0.96rem + 0.22vw, 1.13rem);
   --space-5: clamp(1.5rem,  1.24rem + 1.3vw,  2.25rem);
   --space-6: clamp(2rem,    1.6rem  + 2vw,    3rem);
-  --card-max-width: 44rem;
+  --card-max-width: 39rem;
   --column-min-width: 16rem;
   --card-radius: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
   --button-radius: clamp(0.5rem, 0.44rem + 0.3vw, 0.875rem);
