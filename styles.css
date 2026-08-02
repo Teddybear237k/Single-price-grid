@@ -1,30 +1,42 @@
 :root {
+  /* Font */
+  --font-body: "Karla", system-ui, sans-serif;
   --white: #ffffff;
-  --gray-text: #94a0b3;
-  --teal: #1f9c96;
-  --teal-dark: #1a8b86;
-  --teal-light: #2bb0a7;
-  --lime: #b3d92c;
-  --lime-dark: #93b824;
-  --page-bg: #eef1f4;
+  --page-bg: #eef4f8;
+  --text-body: #64748b; /* was #94a0b3 (2.6:1) — now 4.76:1 on white */
+  --accent: #1f9c96; /* heading cyan */
+  --panel-price-bg: #14726e; /* very dark cyan, price panel */
+  --panel-features-bg: #187a75; /* cyan, features panel */
+  --button-bg: #c0df34;
+  --button-bg-hover: #a9c62b;
+  --button-text: #1c4a3f;
+
+  /* Type scale */
   --font-size-1: clamp(0.69rem, 0.69rem + 0.04vw, 0.72rem);
   --font-size-2: clamp(0.83rem, 0.81rem + 0.12vw, 0.9rem);
-  --font-size-3: clamp(1rem,    0.96rem + 0.22vw, 1.125rem);
-  --font-size-4: clamp(1.2rem,  1.13rem + 0.36vw, 1.4rem);
+  --font-size-3: clamp(1rem, 0.96rem + 0.22vw, 1.125rem);
+  --font-size-4: clamp(1.2rem, 1.13rem + 0.36vw, 1.4rem);
   --font-size-5: clamp(1.44rem, 1.33rem + 0.55vw, 1.76rem);
   --font-size-6: clamp(1.73rem, 1.56rem + 0.82vw, 2.2rem);
   --font-size-7: clamp(2.07rem, 1.84rem + 1.17vw, 2.75rem);
 
+  /* Space scale */
   --space-1: clamp(0.25rem, 0.24rem + 0.05vw, 0.28rem);
-  --space-2: clamp(0.5rem,  0.48rem + 0.11vw, 0.56rem);
+  --space-2: clamp(0.5rem, 0.48rem + 0.11vw, 0.56rem);
   --space-3: clamp(0.75rem, 0.72rem + 0.16vw, 0.84rem);
-  --space-4: clamp(1rem,    0.96rem + 0.22vw, 1.13rem);
-  --space-5: clamp(1.5rem,  1.24rem + 1.3vw,  2.25rem);
-  --space-6: clamp(2rem,    1.6rem  + 2vw,    3rem);
-  --card-max-width: 39rem;
+  --space-4: clamp(1rem, 0.96rem + 0.22vw, 1.13rem);
+  --space-5: clamp(1.5rem, 1.24rem + 1.3vw, 2.25rem);
+  --space-6: clamp(2rem, 1.6rem + 2vw, 3rem);
+
+  --card-max-width: 39.7rem; /* approx 635px */
   --column-min-width: 16rem;
-  --card-radius: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
+  --card-radius: 0.5rem; /* approx 8px*/
   --button-radius: clamp(0.5rem, 0.44rem + 0.3vw, 0.875rem);
+
+  /* Shadows — named for what they are, not the space tokens that used to
+     stand in for them */
+  --shadow-card: 0 1.25rem 2.5rem rgb(0 0 0 / 12%);
+  --shadow-button: 0 0.5rem 0.9rem rgb(0 0 0 / 15%);
 }
 
 * {
@@ -35,10 +47,10 @@ body {
   margin-block: 0;
   margin-inline: 0;
   background: var(--page-bg);
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: var(--font-size-3);
   line-height: 1.6;
-  color: var(--gray-text);
+  color: var(--text-body);
   display: grid;
   place-items: center;
   min-block-size: 100svh;
@@ -51,7 +63,7 @@ body {
   background: var(--white);
   border-radius: var(--card-radius);
   overflow: clip;
-  box-shadow: 0 var(--space-2) var(--space-5) rgb(0 0 0 / 12%);
+  box-shadow: var(--shadow-card);
 }
 
 .intro {
@@ -61,14 +73,15 @@ body {
 .heading {
   margin-block: 0;
   font-size: var(--font-size-6);
-  color: var(--teal);
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .badge {
   margin-block: var(--space-2) 0;
   font-size: var(--font-size-4);
   font-weight: bold;
-  color: var(--lime-dark);
+  color: var(--button-bg-hover);
 }
 
 .text {
@@ -78,7 +91,10 @@ body {
 
 .panels {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(var(--column-min-width), 100%), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--column-min-width), 100%), 1fr)
+  );
 }
 
 .panel {
@@ -87,16 +103,17 @@ body {
 }
 
 .panel-price {
-  background: var(--teal-dark);
+  background: var(--panel-price-bg);
 }
 
 .panel-features {
-  background: var(--teal-light);
+  background: var(--panel-features-bg);
 }
 
 .heading-small {
   margin-block: 0 var(--space-2);
   font-size: var(--font-size-4);
+  font-weight: 700;
 }
 
 .price {
@@ -108,34 +125,47 @@ body {
 .text-small {
   font-size: var(--font-size-2);
   font-weight: normal;
-  opacity: 0.8;
 }
 
 .button {
   display: block;
+  inline-size: 100%;
   margin-block-start: var(--space-3);
   padding-block: var(--space-3);
   padding-inline: var(--space-5);
   border: 0;
   border-radius: var(--button-radius);
-  background: var(--lime);
-  color: #1c4a3f;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-family: inherit;
   font-size: var(--font-size-3);
   font-weight: bold;
   cursor: pointer;
+  box-shadow: var(--shadow-button);
+  transition: background-color 150ms ease;
 }
 
 .button:hover {
-  background: var(--lime-dark);
+  background: var(--button-bg-hover);
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--panel-price-bg);
 }
 
 .list {
+  list-style: none;
   margin-block: 0;
-  padding-inline-start: var(--space-4);
+  padding-inline-start: 0;
 }
 
 .list li {
-  margin-block-end: var(--space-2);
+  margin-block-end: var(--space-1);
   font-size: var(--font-size-3);
-  opacity: 0.85;
+}
+
+.list li:last-child {
+  margin-block-end: 0;
 }

@@ -1,6 +1,6 @@
 # Single Price Grid
 
-### The challenge
+## The challenge
 
 - View the optimal layout for the component depending on their device's screen size
 - See a hover state on desktop for the Sign Up call-to-action
@@ -25,8 +25,5 @@ I still face difficulties in finding the perfect color, perfect font size especi
 [https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries]
 [https://modern-fluid-typography.vercel.app/]
 
-### AI Collaboration
-
-I uesd Claude to perfect my Clamp measurements because I could find the perfect approach for each of the 7 font size and 6 --space- and for the general sizes using rem, vw and px.
-
-
+###Updates
+--Rename root tokens by roles not values and adjusted colours.
